@@ -9,6 +9,9 @@
   "exports": {
     ".": "./dist/index.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "concurrently -k -r \"npm run build:watch\" \"wds\"",
