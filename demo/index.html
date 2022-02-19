@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script type="module">
+      import { html, render } from 'lit';
+      import { FullCalendar, ResourceTimeGrid, ResourceTimeline } from '../dist';
+      customElements.define('full-calendar', FullCalendar);
+      customElements.define('resource-time-grid', ResourceTimeGrid);
+      customElements.define('resource-timeline', ResourceTimeline);
+
+      render(
+        html`
+          <resource-timeline
+            .resources=${[
+              {
+                id: '1',
+                title: 'hiii',
+              },
+              {
+                id: '1w',
+                title: 'hiwii',
+              },
+            ]}
+            .events=${[
+              {
+                start: Date.now() - 1000,
+                end: Date.now() - 1000,
+                title: 'myevent',
+
+                resourceId: '1',
+              },
+            ]}
+            @slot-selected=${console.log}
+          >
+            some light-dom
+          </resource-timeline>
+        `,
+        document.querySelector('#demo')
+      );
+    </script>
+  </body>
+</html>
