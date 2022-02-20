@@ -1,7 +1,12 @@
 import { css, html, LitElement, PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 
-import { Calendar, DateSelectArg, EventInput } from '@fullcalendar/core';
+import {
+  Calendar,
+  DateSelectArg,
+  EventClickArg,
+  EventInput,
+} from '@fullcalendar/core';
 // @ts-ignore
 import commonStyles from '@fullcalendar/common/main.css';
 // @ts-ignore
@@ -43,6 +48,16 @@ export abstract class CalendarElement extends LitElement {
         bubbles: true,
         composed: true,
         detail: { info, element: this.getEventBeingCreated() },
+      })
+    );
+  }
+
+  onEventClick(info: EventClickArg) {
+    this.dispatchEvent(
+      new CustomEvent('event-selected', {
+        bubbles: true,
+        composed: true,
+        detail: { info },
       })
     );
   }

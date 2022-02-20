@@ -32,6 +32,7 @@ export class ResourceTimeGrid extends ResourceElement {
       resources: this.resources,
 
       select: info => this.onSelect(info),
+      eventClick: info => this.onEventClick(info),
       schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     });
   }

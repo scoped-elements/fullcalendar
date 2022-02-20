@@ -30,6 +30,7 @@ export class FullCalendar extends CalendarElement {
         right: 'dayGridMonth,timeGridWeek,timeGridDay',
       },
       select: info => this.onSelect(info),
+      eventClick: info => this.onEventClick(info),
     });
   }
 }

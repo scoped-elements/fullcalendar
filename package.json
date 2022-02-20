@@ -3,7 +3,7 @@
   "description": "Wrapper of fullcalendar as a custom element following the @open-wc/scoped-elements pattern",
   "license": "MIT",
   "author": "full-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "exports": {

@@ -33,6 +33,7 @@ export class ResourceTimeline extends ResourceElement {
       },
 
       select: info => this.onSelect(info),
+      eventClick: info => this.onEventClick(info),
       schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
     });
   }
